@@ -1,0 +1,37 @@
+#!/bin/bash 
+
+cd $HOME
+echo "[*] Now in $(pwd)"
+
+if [ -d $HOME/dotbackup ] ; then
+    echo "dotbackup exists."
+    exit 43
+else
+    mkdir -vp $HOME/dotbackup
+fi
+
+[ -n "$SKIP_ASK" ] || read -p"Do you want to update the dotfiles? [y/N]" yn
+[ -n "$SKIP_ASK" ] && yn=y
+if [[ $yn == "y" ]] ; then
+    echo " [*] Dot files to update"
+    ls -a $HOME/etc/dotfiles/
+    [ -n "$SKIP_ASK" ] || read -p "Press enter to update the above: "
+    for file in `ls -a $HOME/etc/dotfiles/ | grep -v "^\(\.\|\.\.\)$"` ; do
+        SRC=$HOME/etc/dotfiles/`echo $file`
+        DST=`echo $file | sed 's/etc\///' | sed 's/dot\(\.*\)/\1/'`
+
+        echo "[*] SRC: $SRC"
+        echo "[*] DST: $DST"
+        [ -f ~/$DST ] && echo mv -vi $DST $HOME/dotbackup
+        [ -f ~/$DST ] && ls -l ~/$DST
+        echo "[*] ln -s -v $SRC ~/$DST"
+	pwd
+
+        mv -vi $DST $HOME/dotbackup
+
+        ln -s -v $SRC ~/$DST
+    done
+else
+   echo  "[E] Did not install dot files"
+fi
+
