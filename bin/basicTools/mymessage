@@ -1,0 +1,24 @@
+#!/bin/bash
+
+VOICEMESSAGE=$HOME/bin/voicemessage
+MYXMESSAGE=$HOME/bin/myxmessage
+
+if [[ $# -eq 2 ]] ; then
+	TYPE=$1
+	MSG=$2
+	case $TYPE in
+		ECHO) echo "$MSG" 1>&2 ;;
+		INFO) echo "[*] $MSG" 1>&2 ;;
+		WARN) echo "[W] $MSG" 1>&2 ;;
+		FAIL) echo "[!] $MSG" 1>&2 ;;
+		DEBUG) echo "[D] $MSG" 1>&2 ;;
+		STDERR) echo "$MSG" 1>&2 ;;
+		STDOUT) echo "$MSG" ;;
+		XMSG) $MYXMESSAGE "$MSG" ;;
+		VMSG) $VOICEMESSAGE "$MSG" ;;
+		*) echo "BAD TYPE" ;;
+	esac
+else
+	echo "USAGE $0: ECHO STDOUT XMSG VMSG"
+fi
+

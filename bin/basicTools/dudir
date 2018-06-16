@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls -1 | while read file ; do du -sh "$file" ; done | less

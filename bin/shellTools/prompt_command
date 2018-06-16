@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# see http://misc.flogisoft.com/bash/tip_colors_and_formatting
+
+COLOR_RED="\[\e[31;40m\]"
+COLOR_GREEN="\[\e[32;40m\]"
+COLOR_YELLOW="\[\e[33;40m\]"
+COLOR_BLUE="\[\e[34;40m\]"
+COLOR_MAGENTA="\[\e[35;40m\]"
+COLOR_CYAN="\[\e[36;40m\]"
+
+COLOR_RED_BOLD="\[\e[31;1m\]"
+COLOR_GREEN_BOLD="\[\e[32;1m\]"
+COLOR_YELLOW_BOLD="\[\e[33;1m\]"
+COLOR_BLUE_BOLD="\[\e[34;1m\]"
+COLOR_MAGENTA_BOLD="\[\e[35;1m\]"
+COLOR_CYAN_BOLD="\[\e[36;1m\]"
+
+COLOR_NONE="\[\e[0m\]"
+
+#COLOR_HOST=${COLOR_GREEN_BOLD}
+COLOR_HOST=$(getservercolor $(hostname))
+
+IPSCRIPT=$HOME/bin/getip
+NUP=/tmp/.nup
+
+
+promptFunc2()
+{
+	PREV_RET_VAL=$?;
+
+	PS1=""
+
+	if [ -x ../env-cmd ] ; then
+		unset `envmy | awk -F= '/^\w/ {print $1}' | grep -v ENV_GLOBAL | xargs`
+		. ../env-cmd
+		ENVON="(env)"
+	else
+		ENVON=""
+	fi
+
+    if [ -r $NUP ] ; then
+        IPADDR="($(datemy)) $(cat $NUP)"
+    else
+        IPADDR="0.0.0.0"
+    fi
+
+	if test `whoami` != "root"
+	then
+		PS1="${PS1}${COLOR_CYAN_BOLD}\u${COLOR_NONE}"
+		#PS1="${PS1}${COLOR_HOST}\u${COLOR_NONE}"
+	else
+		PS1="${PS1}${COLOR_RED_BOLD}\u${COLOR_NONE}"
+		#PS1="${PS1}${COLOR_HOST}\u${COLOR_NONE}"
+	fi
+
+	if gb > /dev/null 2>&1; then
+        GITBRANCH=" (G: `gb | grep "\*" | cut -c3-`)" 
+	elif hb > /dev/null 2>&1; then
+		GITBRANCH=" (H: `hb`)" 
+    else
+		GITBRANCH="(NR)"
+	fi
+
+	if test `whoami` != "root"
+	then
+		#HOST="@${COLOR_GREEN_BOLD}\h${COLOR_NONE}"
+		HOST="@${COLOR_HOST}\h${COLOR_NONE}"
+	else
+		#HOST="@${COLOR_RED_BOLD}\h${COLOR_NONE}"
+		HOST="@${COLOR_HOST}\h${COLOR_NONE}"
+
+	fi
+	
+	PS1="${PS1}${HOST}\n    $IPADDR\n    $GITBRANCH$ENVON"
+
+	if test $PREV_RET_VAL -eq 0
+	then
+		PS1="${PS1}${COLOR_GREEN_BOLD}\\$ ${COLOR_NONE}"
+	else
+		PS1="${PS1}${COLOR_RED_BOLD}\\$ [${PREV_RET_VAL}] ${COLOR_NONE}"
+	fi
+
+    #PS1="$PS1\w\n> "
+    PS1="$PS1 $(pwd)\n> "
+
+}
+
+promptFunc()
+{
+}
+
+PROMPT_COMMAND=promptFunc
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+detectos()
+{
+    #DEFAULTHOSTISOSX=$(hostisosx)
+    #HOSTISOSX=${HOSTISOSX:=$DEFAULTHOSTISOSX}
+
+    hostisosx
+
+    ret=$?
+    if [ $ret -eq 0 ] ; then
+        echo "osx"
+    else
+        echo "linux"
+    fi
+}
+

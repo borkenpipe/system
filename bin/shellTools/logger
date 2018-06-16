@@ -1,0 +1,17 @@
+
+info()
+{
+    local msg=$1
+    mymessage ECHO "[*] $msg"
+}
+debug()
+{
+    local msg=$1
+    mymessage ECHO "[*] $msg"
+}
+fail()
+{
+    local msg=$1
+    mymessage ECHO "[-] FAILED WITH: $msg"
+    exit 1
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+HOSTISOSX=/Volumes/$USER//bin/hostisosx
+
+if [ $# -lt 1 ] ; then
+    echo "USAGE: please give me something to print to xmessage"
+    exit
+fi
+
+msg="$1"
+
+if $HOSTISOSX ; then
+    XMESSEGE=/usr/X11/bin/xmessage
+else
+    XMESSEGE=xmessage
+fi
+
+$XMESSEGE   "$msg"

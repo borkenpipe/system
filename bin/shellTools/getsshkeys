@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SYSTEM_PATH_BIN=${SYSTEM_PATH_BIN:-"$HOME/bin"}
+SYSTEM_PATH_ETC=${SYSTEM_PATH_ETC:-"$HOME/etc"}
+SOURCE_DIR=${SYSTEM_PATH_BIN}
+source "${SYSTEM_PATH_BIN}/common/includer.sh"
+script_include "common/util.sh"
+
+HOST=$1
+if [[ -z $HOST ]] ; then
+    HOST=`hostname -s`
+fi
+
+SSHKEYS_FILE=$HOME/var/$HOST.sshkeys
+if [[ -r "$SSHKEYS_FILE" ]] ; then
+	cat "$SSHKEYS_FILE"
+else
+	warn "Couldn't find file with list of keys to load at: $SSHKEYS_FILE"
+fi

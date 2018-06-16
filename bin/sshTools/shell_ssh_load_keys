@@ -1,0 +1,60 @@
+#!/bin/bash
+
+SYSTEM_PATH_BIN=${SYSTEM_PATH_BIN:-"$HOME/bin"}
+SYSTEM_PATH_ETC=${SYSTEM_PATH_ETC:-"$HOME/etc"}
+SOURCE_DIR=${SYSTEM_PATH_BIN}
+source "${SYSTEM_PATH_BIN}/common/includer.sh"
+script_include "common/util.sh"
+
+SSH_ENV=$HOME/.ssh/environment
+DEFAULT_SSHKEY=$HOME/.ssh/id_rsa
+
+SHELL_SSH_FUNC="$SYSTEM_PATH_BIN/sshTools/shell_ssh_func"
+fail_if_not_file "$SHELL_SSH_FUNC"
+source "$SHELL_SSH_FUNC"
+
+usage()
+{
+cat << EOF
+usage: $0 options
+
+OPTIONS:
+   -h      Show this message
+   -v      Verbose
+EOF
+}
+
+VERBOSE=
+DEBUG=
+while getopts “hvd” OPTION
+do
+     case $OPTION in
+         h)
+             usage
+             exit 1
+             ;;
+         v)
+             VERBOSE=1
+             ;;
+         d)
+             DEBUG=1
+             ;;
+         ?)
+             usage
+             exit
+             ;;
+     esac
+done
+
+
+debug "starting"
+
+HOST=$(hostname)
+
+if [[ $VERBOSE -eq 1 ]] ; then
+    debug "sourcing the follwoing"
+    cat ${SSH_ENV}
+fi
+source ${SSH_ENV}
+debug "sourced ssh env"
+load_keys

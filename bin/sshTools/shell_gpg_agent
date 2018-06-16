@@ -1,0 +1,38 @@
+#!/bin/bash
+
+GPGTMP=$HOME/.gpg-agent-info-tmp
+GPGREAL=$HOME/.gpg-agent-info
+eval gpg-agent --daemon --enable-ssh-support > $GPGTMP
+ret=$?
+if [ $ret -eq 2 ] ; then
+    echo "SDF"
+    if [ -r "$GPGREAL" ] ; then
+        source $GPGREAL
+        export GPG_AGENT_INFO
+        export SSH_AUTH_SOCK
+        export GPG_TTY=$(tty)
+        return 0
+    else
+        return 1
+    fi
+fi
+if [ $ret -eq 0 ] && [ -n "$GPGTMP" ] ; then
+    echo "FOO"
+    cp -v $GPGTMP $GPGREAL
+    source $GPGREAL
+    ssh-add -L
+    if [ $? -ne 0 ] ; then
+        rm $GPGREAL
+        rm $GPGTMP
+        return 1
+    else
+        export GPG_AGENT_INFO
+        export SSH_AUTH_SOCK
+        export GPG_TTY=$(tty)
+    fi
+else
+    rm $GPGREAL
+    rm $GPGTMP
+    return 1
+fi
+

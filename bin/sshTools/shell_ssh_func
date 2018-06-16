@@ -1,0 +1,28 @@
+#!/bin/bash
+
+SYSTEM_PATH_BIN=${SYSTEM_PATH_BIN:-"$HOME/bin"}
+SYSTEM_PATH_ETC=${SYSTEM_PATH_ETC:-"$HOME/etc"}
+SOURCE_DIR=${SYSTEM_PATH_BIN}
+source "${SYSTEM_PATH_BIN}/common/includer.sh"
+script_include "common/util.sh"
+
+SSH_ADD=ssh-add
+
+function load_keys
+{
+    SSH_HOSTS="$(getsshkeys $HOST)" 2>&1
+    SSH_HOSTS=""
+    SSH_KEY_FOR_HOST=" $HOME/.ssh/$(hostname).id_rsa "
+    SSH_DEFAULT_KEY=" $HOME/.ssh/id_rsa "
+    SSH_HOSTS="$SSH_HOSTS $SSH_KEY_FOR_HOST $SSH_DEFAULT_KEY"
+	info "Loading keys from: $SSH_HOSTS"
+    for sshkey in $SSH_HOSTS ; do 
+        if [ -r "$sshkey" ] ; then
+            info "Loading key $sshkey"
+            $SSH_ADD $sshkey
+        fi
+    done
+    info "Current keys"
+    $SSH_ADD -l
+}
+

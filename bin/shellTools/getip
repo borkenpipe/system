@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if hostisosx ; then
+    #netstat -rn | grep default | awk '{print "router: (" $2 " "  $6 ")" }' | xargs
+    #ifconfig| grep -v "inet6\|127\.0\.0\.1" | grep "inet"  | sed 's/.*inet \(.*\)\/.* brd.*/\1/'
+    getip.py
+else
+    #ip addr | grep -v "inet6\|127\.0\.0\.1" | grep "inet"  | sed 's/.*inet \(.*\)\/.* brd.*/\1/'
+    getip.py --linux
+fi
+

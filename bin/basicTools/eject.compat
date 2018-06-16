@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if hostisosx ; then
+    drutil tray eject
+else
+    eject
+fi
+

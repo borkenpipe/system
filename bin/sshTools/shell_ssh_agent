@@ -1,0 +1,93 @@
+#!/bin/bash
+
+SYSTEM_PATH_BIN=${SYSTEM_PATH_BIN:-"$HOME/bin"}
+SYSTEM_PATH_ETC=${SYSTEM_PATH_ETC:-"$HOME/etc"}
+SOURCE_DIR=${SYSTEM_PATH_BIN}
+source "${SYSTEM_PATH_BIN}/common/includer.sh"
+script_include "common/util.sh"
+
+SSH_ENV=$HOME/.ssh/environment
+DEFAULT_SSHKEY=$HOME/.ssh/id_rsa
+
+SHELL_SSH_FUNC="$SYSTEM_PATH_BIN/sshTools/shell_ssh_func"
+fail_if_not_file "$SHELL_SSH_FUNC"
+source "$SHELL_SSH_FUNC"
+
+usage()
+{
+cat << EOF
+usage: $0 options
+
+OPTIONS:
+   -h      Show this message
+   -v      Verbose
+   -d      Debug
+   -f      Force loading all keys
+EOF
+}
+
+VERBOSE=
+DEBUG=
+while getopts “hvdf” OPTION
+do
+     case $OPTION in
+         h)
+             usage
+             exit 1
+             ;;
+         v)
+             VERBOSE=1
+             ;;
+         d)
+             DEBUG=1
+             ;;
+         f)
+             FORCE=1
+             ;;
+         ?)
+             usage
+             exit
+             ;;
+     esac
+done
+
+
+debug "starting"
+
+function start_agent
+{
+	debug "reaping agents"
+	killall ssh-agent
+	debug "Initialising new SSH agent..."
+	/usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
+	if [[ $VERBOSE -eq 1 ]] ; then
+		debug "started new agent with env of"
+		cat ${SSH_ENV}
+	fi
+	chmod 600 ${SSH_ENV}
+	. ${SSH_ENV}
+	debug "sourced ssh env (initial sourcing)"
+}
+
+# Source SSH settings, if applicable
+
+HOST=$(hostname)
+
+if [ -f "${SSH_ENV}" ]; then
+	if [[ $VERBOSE -eq 1 ]] ; then
+		debug "sourcing the follwoing"
+		cat ${SSH_ENV}
+	fi
+	. ${SSH_ENV}
+	debug "sourced ssh env"
+	ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || { start_agent; }
+else
+	start_agent;
+fi
+
+if [ -n "$FORCE" ] ; then
+    load_keys
+else
+    ssh-add -l || load_keys
+fi
+
