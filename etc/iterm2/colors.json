@@ -1,0 +1,886 @@
+{
+    "Colors": [
+        {
+        "Name": "aliceblue",
+        "Red Component": 0.941,
+        "Green Component": 0.973,
+        "Blue Component": 1.000
+        },
+        {
+        "Name": "antiquewhite",
+        "Red Component": 0.980,
+        "Green Component": 0.922,
+        "Blue Component": 0.843
+        },
+        {
+        "Name": "aqua",
+        "Red Component": 0.000,
+        "Green Component": 1.000,
+        "Blue Component": 1.000
+        },
+        {
+        "Name": "aquamarine",
+        "Red Component": 0.498,
+        "Green Component": 1.000,
+        "Blue Component": 0.831
+        },
+        {
+        "Name": "azure",
+        "Red Component": 0.941,
+        "Green Component": 1.000,
+        "Blue Component": 1.000
+        },
+        {
+        "Name": "beige",
+        "Red Component": 0.961,
+        "Green Component": 0.961,
+        "Blue Component": 0.863
+        },
+        {
+        "Name": "bisque",
+        "Red Component": 1.000,
+        "Green Component": 0.894,
+        "Blue Component": 0.769
+        },
+        {
+        "Name": "black",
+        "Red Component": 0.000,
+        "Green Component": 0.000,
+        "Blue Component": 0.000
+        },
+        {
+        "Name": "blanchedalmond",
+        "Red Component": 1.000,
+        "Green Component": 0.922,
+        "Blue Component": 0.804
+        },
+        {
+        "Name": "blue",
+        "Red Component": 0.000,
+        "Green Component": 0.000,
+        "Blue Component": 1.000
+        },
+        {
+        "Name": "blueviolet",
+        "Red Component": 0.541,
+        "Green Component": 0.169,
+        "Blue Component": 0.886
+        },
+        {
+        "Name": "brown",
+        "Red Component": 0.647,
+        "Green Component": 0.165,
+        "Blue Component": 0.165
+        },
+        {
+        "Name": "burlywood",
+        "Red Component": 0.871,
+        "Green Component": 0.722,
+        "Blue Component": 0.529
+        },
+        {
+        "Name": "cadetblue",
+        "Red Component": 0.373,
+        "Green Component": 0.620,
+        "Blue Component": 0.627
+        },
+        {
+        "Name": "chartreuse",
+        "Red Component": 0.498,
+        "Green Component": 1.000,
+        "Blue Component": 0.000
+        },
+        {
+            "Name": "chocolate",
+            "Red Component": 0.824,
+            "Green Component": 0.412,
+            "Blue Component": 0.118
+        },
+        {
+            "Name": "coral",
+            "Red Component": 1.000,
+            "Green Component": 0.498,
+            "Blue Component": 0.314
+        },
+        {
+            "Name": "cornflowerblue",
+            "Red Component": 0.392,
+            "Green Component": 0.584,
+            "Blue Component": 0.929
+        },
+        {
+            "Name": "cornsilk",
+            "Red Component": 1.000,
+            "Green Component": 0.973,
+            "Blue Component": 0.863
+        },
+        {
+            "Name": "crimson",
+            "Red Component": 0.863,
+            "Green Component": 0.078,
+            "Blue Component": 0.235
+        },
+        {
+            "Name": "cyan",
+            "Red Component": 0.000,
+            "Green Component": 1.000,
+            "Blue Component": 1.000
+        },
+        {
+            "Name": "darkblue",
+            "Red Component": 0.000,
+            "Green Component": 0.000,
+            "Blue Component": 0.545
+        },
+        {
+            "Name": "darkcyan",
+            "Red Component": 0.000,
+            "Green Component": 0.545,
+            "Blue Component": 0.545
+        },
+        {
+            "Name": "darkgoldenrod",
+            "Red Component": 0.722,
+            "Green Component": 0.525,
+            "Blue Component": 0.043
+        },
+        {
+            "Name": "darkgray",
+            "Red Component": 0.663,
+            "Green Component": 0.663,
+            "Blue Component": 0.663
+        },
+        {
+            "Name": "darkgreen",
+            "Red Component": 0.000,
+            "Green Component": 0.392,
+            "Blue Component": 0.000
+        },
+        {
+            "Name": "darkgrey",
+            "Red Component": 0.663,
+            "Green Component": 0.663,
+            "Blue Component": 0.663
+        },
+        {
+            "Name": "darkkhaki",
+            "Red Component": 0.741,
+            "Green Component": 0.718,
+            "Blue Component": 0.420
+        },
+        {
+            "Name": "darkmagenta",
+            "Red Component": 0.545,
+            "Green Component": 0.000,
+            "Blue Component": 0.545
+        },  
+        {
+            "Name": "darkolivegreen",
+            "Red Component": 0.333,
+            "Green Component": 0.420,
+            "Blue Component": 0.184
+        },  
+        {
+            "Name": "darkorange",
+            "Red Component": 1.000,
+            "Green Component": 0.549,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "darkorchid",
+            "Red Component": 0.600,
+            "Green Component": 0.196,
+            "Blue Component": 0.800
+        },  
+        {
+            "Name": "darkred",
+            "Red Component": 0.545,
+            "Green Component": 0.000,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "darksalmon",
+            "Red Component": 0.914,
+            "Green Component": 0.588,
+            "Blue Component": 0.478
+        },  
+        {
+            "Name": "darkseagreen",
+            "Red Component": 0.561,
+            "Green Component": 0.737,
+            "Blue Component": 0.561
+        },  
+        {
+            "Name": "darkslateblue",
+            "Red Component": 0.282,
+            "Green Component": 0.239,
+            "Blue Component": 0.545
+        },  
+        {
+            "Name": "darkslategray",
+            "Red Component": 0.184,
+            "Green Component": 0.310,
+            "Blue Component": 0.310
+        },  
+        {
+            "Name": "darkslategrey",
+            "Red Component": 0.184,
+            "Green Component": 0.310,
+            "Blue Component": 0.310
+        },  
+        {
+            "Name": "darkturquoise",
+            "Red Component": 0.000,
+            "Green Component": 0.808,
+            "Blue Component": 0.820
+        },  
+        {
+            "Name": "darkviolet",
+            "Red Component": 0.580,
+            "Green Component": 0.000,
+            "Blue Component": 0.827
+        },  
+        {
+            "Name": "deeppink",
+            "Red Component": 1.000,
+            "Green Component": 0.078,
+            "Blue Component": 0.576
+        },  
+        {
+            "Name": "deepskyblue",
+            "Red Component": 0.000,
+            "Green Component": 0.749,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "dimgray",
+            "Red Component": 0.412,
+            "Green Component": 0.412,
+            "Blue Component": 0.412
+        },  
+        {
+            "Name": "dimgrey",
+            "Red Component": 0.412,
+            "Green Component": 0.412,
+            "Blue Component": 0.412
+        },  
+        {
+            "Name": "dodgerblue",
+            "Red Component": 0.118,
+            "Green Component": 0.565,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "firebrick",
+            "Red Component": 0.698,
+            "Green Component": 0.133,
+            "Blue Component": 0.133
+        },  
+        {
+            "Name": "floralwhite",
+            "Red Component": 1.000,
+            "Green Component": 0.980,
+            "Blue Component": 0.941
+        },  
+        {
+            "Name": "forestgreen",
+            "Red Component": 0.133,
+            "Green Component": 0.545,
+            "Blue Component": 0.133
+        },  
+        {
+            "Name": "fuchsia",
+            "Red Component": 1.000,
+            "Green Component": 0.000,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "gainsboro",
+            "Red Component": 0.863,
+            "Green Component": 0.863,
+            "Blue Component": 0.863
+        },  
+        {
+            "Name": "ghostwhite",
+            "Red Component": 0.973,
+            "Green Component": 0.973,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "gold",
+            "Red Component": 1.000,
+            "Green Component": 0.843,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "goldenrod",
+            "Red Component": 0.855,
+            "Green Component": 0.647,
+            "Blue Component": 0.125
+        },  
+        {
+            "Name": "gray",
+            "Red Component": 0.502,
+            "Green Component": 0.502,
+            "Blue Component": 0.502
+        },  
+        {
+            "Name": "green",
+            "Red Component": 0.000,
+            "Green Component": 0.502,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "greenyellow",
+            "Red Component": 0.678,
+            "Green Component": 1.000,
+            "Blue Component": 0.184
+        },  
+        {
+            "Name": "grey",
+            "Red Component": 0.502,
+            "Green Component": 0.502,
+            "Blue Component": 0.502
+        },  
+        {
+            "Name": "honeydew",
+            "Red Component": 0.941,
+            "Green Component": 1.000,
+            "Blue Component": 0.941
+        },  
+        {
+            "Name": "hotpink",
+            "Red Component": 1.000,
+            "Green Component": 0.412,
+            "Blue Component": 0.706
+        },  
+        {
+            "Name": "indianred",
+            "Red Component": 0.804,
+            "Green Component": 0.361,
+            "Blue Component": 0.361
+        },  
+        {
+            "Name": "indigo",
+            "Red Component": 0.294,
+            "Green Component": 0.000,
+            "Blue Component": 0.510
+        },  
+        {
+            "Name": "ivory",
+            "Red Component": 1.000,
+            "Green Component": 1.000,
+            "Blue Component": 0.941
+        },  
+        {
+            "Name": "khaki",
+            "Red Component": 0.941,
+            "Green Component": 0.902,
+            "Blue Component": 0.549
+        },  
+        {
+            "Name": "lavender",
+            "Red Component": 0.902,
+            "Green Component": 0.902,
+            "Blue Component": 0.980
+        },  
+        {
+            "Name": "lavenderblush",
+            "Red Component": 1.000,
+            "Green Component": 0.941,
+            "Blue Component": 0.961
+        },  
+        {
+            "Name": "lawngreen",
+            "Red Component": 0.486,
+            "Green Component": 0.988,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "lemonchiffon",
+            "Red Component": 1.000,
+            "Green Component": 0.980,
+            "Blue Component": 0.804
+        },  
+        {
+            "Name": "lightblue",
+            "Red Component": 0.678,
+            "Green Component": 0.847,
+            "Blue Component": 0.902
+        },  
+        {
+            "Name": "lightcoral",
+            "Red Component": 0.941,
+            "Green Component": 0.502,
+            "Blue Component": 0.502
+        },  
+        {
+            "Name": "lightcyan",
+            "Red Component": 0.878,
+            "Green Component": 1.000,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "lightgoldenrodyellow",
+            "Red Component": 0.980,
+            "Green Component": 0.980,
+            "Blue Component": 0.824
+        },  
+        {
+            "Name": "lightgray",
+            "Red Component": 0.827,
+            "Green Component": 0.827,
+            "Blue Component": 0.827
+        },  
+        {
+            "Name": "lightgreen",
+            "Red Component": 0.565,
+            "Green Component": 0.933,
+            "Blue Component": 0.565
+        },  
+        {
+            "Name": "lightgrey",
+            "Red Component": 0.827,
+            "Green Component": 0.827,
+            "Blue Component": 0.827
+        },  
+        {
+            "Name": "lightpink",
+            "Red Component": 1.000,
+            "Green Component": 0.714,
+            "Blue Component": 0.757
+        },  
+        {
+            "Name": "lightsalmon",
+            "Red Component": 1.000,
+            "Green Component": 0.627,
+            "Blue Component": 0.478
+        },  
+        {
+            "Name": "lightseagreen",
+            "Red Component": 0.125,
+            "Green Component": 0.698,
+            "Blue Component": 0.667
+        },  
+        {
+            "Name": "lightskyblue",
+            "Red Component": 0.529,
+            "Green Component": 0.808,
+            "Blue Component": 0.980
+        },  
+        {
+            "Name": "lightslategray",
+            "Red Component": 0.467,
+            "Green Component": 0.533,
+            "Blue Component": 0.600
+        },  
+        {
+            "Name": "lightslategrey",
+            "Red Component": 0.467,
+            "Green Component": 0.533,
+            "Blue Component": 0.600
+        },  
+        {
+            "Name": "lightsteelblue",
+            "Red Component": 0.690,
+            "Green Component": 0.769,
+            "Blue Component": 0.871
+        },  
+        {
+            "Name": "lightyellow",
+            "Red Component": 1.000,
+            "Green Component": 1.000,
+            "Blue Component": 0.878
+        },  
+        {
+            "Name": "lime",
+            "Red Component": 0.000,
+            "Green Component": 1.000,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "limegreen",
+            "Red Component": 0.196,
+            "Green Component": 0.804,
+            "Blue Component": 0.196
+        },  
+        {
+            "Name": "linen",
+            "Red Component": 0.980,
+            "Green Component": 0.941,
+            "Blue Component": 0.902
+        },  
+        {
+            "Name": "magenta",
+            "Red Component": 1.000,
+            "Green Component": 0.000,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "maroon",
+            "Red Component": 0.502,
+            "Green Component": 0.000,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "mediumaquamarine",
+            "Red Component": 0.400,
+            "Green Component": 0.804,
+            "Blue Component": 0.667
+        },  
+        {
+            "Name": "mediumblue",
+            "Red Component": 0.000,
+            "Green Component": 0.000,
+            "Blue Component": 0.804
+        },  
+        {
+            "Name": "mediumorchid",
+            "Red Component": 0.729,
+            "Green Component": 0.333,
+            "Blue Component": 0.827
+        },  
+        {
+            "Name": "mediumpurple",
+            "Red Component": 0.576,
+            "Green Component": 0.439,
+            "Blue Component": 0.859
+        },  
+        {
+            "Name": "mediumseagreen",
+            "Red Component": 0.235,
+            "Green Component": 0.702,
+            "Blue Component": 0.443
+        },  
+        {
+            "Name": "mediumslateblue",
+            "Red Component": 0.482,
+            "Green Component": 0.408,
+            "Blue Component": 0.933
+        },  
+        {
+            "Name": "mediumspringgreen",
+            "Red Component": 0.000,
+            "Green Component": 0.980,
+            "Blue Component": 0.604
+        },  
+        {
+            "Name": "mediumturquoise",
+            "Red Component": 0.282,
+            "Green Component": 0.820,
+            "Blue Component": 0.800
+        },  
+        {
+            "Name": "mediumvioletred",
+            "Red Component": 0.780,
+            "Green Component": 0.082,
+            "Blue Component": 0.522
+        },  
+        {
+            "Name": "midnightblue",
+            "Red Component": 0.098,
+            "Green Component": 0.098,
+            "Blue Component": 0.439
+        },  
+        {
+            "Name": "mintcream",
+            "Red Component": 0.961,
+            "Green Component": 1.000,
+            "Blue Component": 0.980
+        },  
+        {
+            "Name": "mistyrose",
+            "Red Component": 1.000,
+            "Green Component": 0.894,
+            "Blue Component": 0.882
+        },  
+        {
+            "Name": "moccasin",
+            "Red Component": 1.000,
+            "Green Component": 0.894,
+            "Blue Component": 0.710
+        },  
+        {
+            "Name": "navajowhite",
+            "Red Component": 1.000,
+            "Green Component": 0.871,
+            "Blue Component": 0.678
+        },  
+        {
+            "Name": "navy",
+            "Red Component": 0.000,
+            "Green Component": 0.000,
+            "Blue Component": 0.502
+        },  
+        {
+            "Name": "oldlace",
+            "Red Component": 0.992,
+            "Green Component": 0.961,
+            "Blue Component": 0.902
+        },  
+        {
+            "Name": "olive",
+            "Red Component": 0.502,
+            "Green Component": 0.502,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "olivedrab",
+            "Red Component": 0.420,
+            "Green Component": 0.557,
+            "Blue Component": 0.137
+        },  
+        {
+            "Name": "orange",
+            "Red Component": 1.000,
+            "Green Component": 0.647,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "orangered",
+            "Red Component": 1.000,
+            "Green Component": 0.271,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "orchid",
+            "Red Component": 0.855,
+            "Green Component": 0.439,
+            "Blue Component": 0.839
+        },  
+        {
+            "Name": "palegoldenrod",
+            "Red Component": 0.933,
+            "Green Component": 0.910,
+            "Blue Component": 0.667
+        },  
+        {
+            "Name": "palegreen",
+            "Red Component": 0.596,
+            "Green Component": 0.984,
+            "Blue Component": 0.596
+        },  
+        {
+            "Name": "paleturquoise",
+            "Red Component": 0.686,
+            "Green Component": 0.933,
+            "Blue Component": 0.933
+        },  
+        {
+            "Name": "palevioletred",
+            "Red Component": 0.859,
+            "Green Component": 0.439,
+            "Blue Component": 0.576
+        },  
+        {
+            "Name": "papayawhip",
+            "Red Component": 1.000,
+            "Green Component": 0.937,
+            "Blue Component": 0.835
+        },  
+        {
+            "Name": "peachpuff",
+            "Red Component": 1.000,
+            "Green Component": 0.855,
+            "Blue Component": 0.725
+        },  
+        {
+            "Name": "peru",
+            "Red Component": 0.804,
+            "Green Component": 0.522,
+            "Blue Component": 0.247
+        },  
+        {
+            "Name": "pink",
+            "Red Component": 1.000,
+            "Green Component": 0.753,
+            "Blue Component": 0.796
+        },  
+        {
+            "Name": "plum",
+            "Red Component": 0.867,
+            "Green Component": 0.627,
+            "Blue Component": 0.867
+        },  
+        {
+            "Name": "powderblue",
+            "Red Component": 0.690,
+            "Green Component": 0.878,
+            "Blue Component": 0.902
+        },  
+        {
+            "Name": "purple",
+            "Red Component": 0.502,
+            "Green Component": 0.000,
+            "Blue Component": 0.502
+        },  
+        {
+            "Name": "red",
+            "Red Component": 1.000,
+            "Green Component": 0.000,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "rosybrown",
+            "Red Component": 0.737,
+            "Green Component": 0.561,
+            "Blue Component": 0.561
+        },  
+        {
+            "Name": "royalblue",
+            "Red Component": 0.255,
+            "Green Component": 0.412,
+            "Blue Component": 0.882
+        },  
+        {
+            "Name": "saddlebrown",
+            "Red Component": 0.545,
+            "Green Component": 0.271,
+            "Blue Component": 0.075
+        },  
+        {
+            "Name": "salmon",
+            "Red Component": 0.980,
+            "Green Component": 0.502,
+            "Blue Component": 0.447
+        },  
+        {
+            "Name": "sandybrown",
+            "Red Component": 0.957,
+            "Green Component": 0.643,
+            "Blue Component": 0.376
+        },  
+        {
+            "Name": "seagreen",
+            "Red Component": 0.180,
+            "Green Component": 0.545,
+            "Blue Component": 0.341
+        },  
+        {
+            "Name": "seashell",
+            "Red Component": 1.000,
+            "Green Component": 0.961,
+            "Blue Component": 0.933
+        },  
+        {
+            "Name": "sienna",
+            "Red Component": 0.627,
+            "Green Component": 0.322,
+            "Blue Component": 0.176
+        },  
+        {
+            "Name": "silver",
+            "Red Component": 0.753,
+            "Green Component": 0.753,
+            "Blue Component": 0.753
+        },  
+        {
+            "Name": "skyblue",
+            "Red Component": 0.529,
+            "Green Component": 0.808,
+            "Blue Component": 0.922
+        },  
+        {
+            "Name": "slateblue",
+            "Red Component": 0.416,
+            "Green Component": 0.353,
+            "Blue Component": 0.804
+        },  
+        {
+            "Name": "slategray",
+            "Red Component": 0.439,
+            "Green Component": 0.502,
+            "Blue Component": 0.565
+        },  
+        {
+            "Name": "slategrey",
+            "Red Component": 0.439,
+            "Green Component": 0.502,
+            "Blue Component": 0.565
+        },  
+        {
+            "Name": "snow",
+            "Red Component": 1.000,
+            "Green Component": 0.980,
+            "Blue Component": 0.980
+        },  
+        {
+            "Name": "springgreen",
+            "Red Component": 0.000,
+            "Green Component": 1.000,
+            "Blue Component": 0.498
+        },  
+        {
+            "Name": "steelblue",
+            "Red Component": 0.275,
+            "Green Component": 0.510,
+            "Blue Component": 0.706
+        },  
+        {
+            "Name": "tan",
+            "Red Component": 0.824,
+            "Green Component": 0.706,
+            "Blue Component": 0.549
+        },  
+        {
+            "Name": "teal",
+            "Red Component": 0.000,
+            "Green Component": 0.502,
+            "Blue Component": 0.502
+        },  
+        {
+            "Name": "thistle",
+            "Red Component": 0.847,
+            "Green Component": 0.749,
+            "Blue Component": 0.847
+        },  
+        {
+            "Name": "tomato",
+            "Red Component": 1.000,
+            "Green Component": 0.388,
+            "Blue Component": 0.278
+        },  
+        {
+            "Name": "turquoise",
+            "Red Component": 0.251,
+            "Green Component": 0.878,
+            "Blue Component": 0.816
+        },  
+        {
+            "Name": "violet",
+            "Red Component": 0.933,
+            "Green Component": 0.510,
+            "Blue Component": 0.933
+        },  
+        {
+            "Name": "wheat",
+            "Red Component": 0.961,
+            "Green Component": 0.871,
+            "Blue Component": 0.702
+        },  
+        {
+            "Name": "white",
+            "Red Component": 1.000,
+            "Green Component": 1.000,
+            "Blue Component": 1.000
+        },  
+        {
+            "Name": "whitesmoke",
+            "Red Component": 0.961,
+            "Green Component": 0.961,
+            "Blue Component": 0.961
+        },  
+        {
+            "Name": "yellow",
+            "Red Component": 1.000,
+            "Green Component": 1.000,
+            "Blue Component": 0.000
+        },  
+        {
+            "Name": "yellowgreen",
+            "Red Component": 0.604,
+            "Green Component": 0.804,
+            "Blue Component": 0.196
+        }
+    ]
+}
