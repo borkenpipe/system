@@ -40,6 +40,7 @@ set spellfile=~/etc/en.utf-8.spl.add
 
 """"""""""""""""""""""""   BASICS
 set nocompatible
+set tabpagemax=100
 
 """"""""""""""""""""""""   FUZZY FINDING
 " ** is special, search subdir and subdir of them
