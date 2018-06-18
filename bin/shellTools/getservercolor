@@ -1,0 +1,18 @@
+#!/bin/bash
+
+HOST=$1
+if [ -n "$HOST" ] ; then
+	#mymessage ECHO "looking up $HOST"
+
+	SERVERMAP=$HOME/etc/myhosts
+	if [ -r "$SERVERMAP" ] ; then
+		if awk -F ':' '{print $1}' $SERVERMAP | grep "^$HOST$" -q ; then
+			value=$(grep "^$HOST:" $SERVERMAP | awk -F ':' '{print $2}' | awk -F ',' '{print $2}')
+            #echo -n "FOUND $(awk -F ':' '{print $1}' $SERVERMAP | grep "^$HOST$") and $(grep "^$HOST:" $SERVERMAP | awk -F ':' '{print $2}')"
+            #echo -n "FOUND $(awk -F ':' '{print $1}' $SERVERMAP | grep "^$HOST$") and $(grep "^$HOST:" $SERVERMAP | awk -F ':' '{print $2}' | awk -F ',' '{print $2}')"
+            if [ -n "$value" ] ; then
+                tput setaf $value
+            fi
+		fi
+	fi
+fi
