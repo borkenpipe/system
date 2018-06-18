@@ -1,4 +1,5 @@
 etc/dotfiles/.config/
 etc/it2prof_hosts.sh
+etc/iterm2/hosts.csv
+etc/iterm2/hosts.csv.blank
 etc/myhosts
-
