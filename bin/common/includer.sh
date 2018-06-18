@@ -14,10 +14,10 @@ script_include()
                 # normailize to many slashes to just one
                 SOURCE_DIR=$(echo "$SOURCE_DIR" | sed -E 's/\/+$//')
                 SOURCE_DIR="${SOURCE_DIR}/"
-                echo "[W] SOURCE_DIR set to: \"$SOURCE_DIR\""
+                [ -n "$DEBUG" ] && echo "[W] SOURCE_DIR set to: \"$SOURCE_DIR\""
         else
                 SOURCE_DIR="."
-                echo "[*] SOURCE_DIR set to: \"$SOURCE_DIR\""
+                [ -n "$DEBUG" ] && echo "[*] SOURCE_DIR set to: \"$SOURCE_DIR\""
         fi
 
 		script_source="${SOURCE_DIR}/$script_script"
