@@ -1,0 +1,5 @@
+#!/bin/bash
+
+jq '. | map_values(keys)'  < $1
+
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+lhs=$1
+rhs=$2
+wdiff $lhs $rhs | colordiff
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+awk 'length > 80 {print FILENAME "(" FNR "): " $0}' *.c

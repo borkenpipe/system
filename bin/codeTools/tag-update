@@ -1,0 +1,24 @@
+#!/bin/bash
+
+SYSTEM_PATH_BIN=${SYSTEM_PATH_BIN:-"$HOME/bin"}
+SYSTEM_PATH_ETC=${SYSTEM_PATH_ETC:-"$HOME/etc"}
+SOURCE_DIR=${SYSTEM_PATH_BIN}
+source "${SYSTEM_PATH_BIN}/common/includer.sh"
+script_include "common/util.sh"
+
+DIR=$(pwd)
+
+info "Building cscope.files"
+find -H "$DIR" -wholename "*/.svn" -prune -o -wholename "*/.pc" -prune \
+	-o -name "*.[chyl]" -printf "\"%p\"\n" \
+	-o -name "*.cc" -printf "\"%p\"\n" \
+	-o -name "*.hh" -printf "\"%p\"\n" \
+	-o -name "*.[ch]pp" -printf "\"%p\"\n" \
+	| tee  cscope.files
+
+info "running ctags"
+ctags -R -I hidden_def,hidden_proto --exclude=".pc" --exclude=".svn"
+
+info "building cscope database"
+cscope -b
+

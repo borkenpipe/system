@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$2" ] ; then
+    jq '.' < $1
+else
+    jq "$2" < $1
+fi
+
+

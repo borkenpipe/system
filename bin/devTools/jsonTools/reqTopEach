@@ -1,0 +1,4 @@
+#!/bin/bash
+
+jq '. | map_values([0]) | to_entries[] | .key'  < $1
+

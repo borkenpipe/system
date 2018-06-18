@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$2" ] ; then
+    curl $1 -o - | jq '.'
+else
+    curl $1 -o - | jq "$2"
+fi
+
+
