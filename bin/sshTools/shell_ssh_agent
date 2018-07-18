@@ -92,6 +92,7 @@ if [ -z "$SSH_AUTH_SOCK" ]  ; then
     else
         info "list keys and if none load them"
         ssh-add -l || load_keys
+    fi
 else
     warn "Not doing anything if we are doing agent forwarding"
 fi
