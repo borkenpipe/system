@@ -73,21 +73,25 @@ function start_agent
 
 HOST=$(hostname)
 
-if [ -f "${SSH_ENV}" ]; then
-	if [[ $VERBOSE -eq 1 ]] ; then
-		debug "sourcing the follwoing"
-		cat ${SSH_ENV}
-	fi
-	. ${SSH_ENV}
-	debug "sourced ssh env"
-	ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || { start_agent; }
-else
-	start_agent;
-fi
+if [ -z "$SSH_AUTH_SOCK" ]  ; then
+    if [ -f "${SSH_ENV}" ]; then
+        if [[ $VERBOSE -eq 1 ]] ; then
+            debug "sourcing the follwoing"
+            cat ${SSH_ENV}
+        fi
+        . ${SSH_ENV}
+        debug "sourced ssh env"
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || { start_agent; }
+    else
+        start_agent;
+    fi
 
-if [ -n "$FORCE" ] ; then
-    load_keys
+    if [ -n "$FORCE" ] ; then
+        warn "Forcing loading of keys"
+        load_keys
+    else
+        info "list keys and if none load them"
+        ssh-add -l || load_keys
 else
-    ssh-add -l || load_keys
+    warn "Not doing anything if we are doing agent forwarding"
 fi
-
