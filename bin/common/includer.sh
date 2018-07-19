@@ -9,18 +9,18 @@ script_include()
 
 	for script_script in $script_script_space_list ; do
 
-        export SOURCE_DIR=${SOURCE_DIR:-""}
-        if [ -n "$SOURCE_DIR" ] ; then
+        export SOURCE_DIR_SYSTEM=${SOURCE_DIR_SYSTEM:-""}
+        if [ -n "$SOURCE_DIR_SYSTEM" ] ; then
                 # normailize to many slashes to just one
-                SOURCE_DIR=$(echo "$SOURCE_DIR" | sed -E 's/\/+$//')
-                SOURCE_DIR="${SOURCE_DIR}/"
-                [ -n "$DEBUG" ] && echo "[W] SOURCE_DIR set to: \"$SOURCE_DIR\""
+                SOURCE_DIR_SYSTEM=$(echo "$SOURCE_DIR_SYSTEM" | sed -E 's/\/+$//')
+                SOURCE_DIR_SYSTEM="${SOURCE_DIR_SYSTEM}/"
+                [ -n "$DEBUG" ] && echo "[W] SOURCE_DIR_SYSTEM set to: \"$SOURCE_DIR_SYSTEM\""
         else
-                SOURCE_DIR="."
-                [ -n "$DEBUG" ] && echo "[*] SOURCE_DIR set to: \"$SOURCE_DIR\""
+                SOURCE_DIR_SYSTEM="."
+                [ -n "$DEBUG" ] && echo "[*] SOURCE_DIR_SYSTEM set to: \"$SOURCE_DIR_SYSTEM\""
         fi
 
-		script_source="${SOURCE_DIR}/$script_script"
+		script_source="${SOURCE_DIR_SYSTEM}/$script_script"
 
         local do_the_include=""
         do_the_include=0
@@ -47,9 +47,9 @@ script_include()
 			source "$script_source"
 
 		else
-            echo "SOURCE_DIR: \"$SOURCE_DIR\""
-			ls -ld "$SOURCE_DIR"
-			file "$SOURCE_DIR"
+            echo "SOURCE_DIR_SYSTEM: \"$SOURCE_DIR_SYSTEM\""
+			ls -ld "$SOURCE_DIR_SYSTEM"
+			file "$SOURCE_DIR_SYSTEM"
 			echo "[F] Couldn't source: $script_source"
 			exit 42
 		fi
