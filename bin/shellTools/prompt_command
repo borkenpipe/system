@@ -19,7 +19,7 @@ COLOR_CYAN_BOLD="\[\e[36;1m\]"
 COLOR_NONE="\[\e[0m\]"
 
 #COLOR_HOST=${COLOR_GREEN_BOLD}
-COLOR_HOST=$(getservercolor $(hostname))
+COLOR_HOST=$(getservercolor $(hostname -s))
 
 IPSCRIPT=$HOME/bin/getip
 NUP=/tmp/.nup
@@ -62,7 +62,7 @@ promptFunc()
 		GITBRANCH="(NR)"
 	fi
 
-    it2prof "$(hostname)"
+    it2prof "$(hostname -s)"
 
 	if test `whoami` != "root"
 	then

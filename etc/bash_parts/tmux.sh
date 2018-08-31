@@ -61,7 +61,7 @@ case $SESSION_TYPE in
     local)
         [ -x ~/.local_source ] &&  source ~/.local_source
         echo "[*] on $MYTTY"
-        it2prof "$(hostname)"
+        it2prof "$(hostname -s)"
         ;;
     local/tmux)
         [ -x ~/.local_source.tmux ] &&  source ~/.local_source.tmux
@@ -72,7 +72,7 @@ case $SESSION_TYPE in
     remote/ssh)
         [ -x ~/.local_source.ssh ] &&  source ~/.local_source.ssh
         echo "[*] on $MYTTY"
-        [ -z "$LC_ITERM2_PROFILE_ALREADY_SET" ] && it2prof "$(hostname)"
+        [ -z "$LC_ITERM2_PROFILE_ALREADY_SET" ] && it2prof "$(hostname -s)"
         ;;
     *)
         [ -x ~/.local_source ] &&  source ~/.local_source
